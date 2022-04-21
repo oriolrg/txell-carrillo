@@ -10,6 +10,7 @@ body {
    width: 100%;
    margin: 0;
    font-size: 17px;
+   background-color: rgb(14, 19, 24);
 }
 #navbar  {
    overflow: hidden;
@@ -17,8 +18,7 @@ body {
    position: fixed; /* Set the navbar to fixed position */
    top: 0; /* Position the navbar at the top of the page */
    width: 100%; /* Full width */
-   z-index: 22;
-   opacity: 90%;
+   z-index: 20;
 }
 .navbar a {
    float: center;
@@ -30,12 +30,12 @@ body {
    font-size: 17px;
  }
  #nav-title{
-    color: #477464;
+    color: #86AFA0;
     font-size: 27px;
  }
  
  .navbar a:hover {
-   background: #ddd;
+   background: #FFFBF9;
    color: black;
  }
 
@@ -44,35 +44,110 @@ body {
    position: relative;
 }
 #quisoc{
-   background-color: #00eb00;
-   min-height: 200px;
+   background-image: url("/images/txell.webp");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 50em;
    position: relative;
 }
+#ma{
+   background-color: #EFDCCC;
+}
+#genolls{
+   background-color: #EFDCCC;
+}
 #inici{
-   background-color: #fff;
+   background-color: #FFFBF9;
+   background-image: url("/public/images/contacte.jpg");
    min-height: 200px;
    position: relative;
 }
 #serveis{
-   background-color: blue;
+   background-color: #EFDCCC;
    min-height: 200px;
    position: relative;
 }
+#buit{
+   background-color: #EFDCCC;
+   min-height: 200px;
+   position: relative;
+}
+#aromaterapiaBuit{
+   background-color: #EFDCCC;
+   min-height: 200px;
+   position: relative;
+}
+#sub-serveis{
+   background-image: url("/images/rosa.webp");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 50em;
+}
 #contact{
-   background-image: url("/images/contacte.jpg");
+   background-image: url("/public/images/contacte.jpg");
+   
+   background-color: #EFDCCC;
    min-height: 300px;
    position: relative;
 }
+#reiki{
+   
+   background-image: url("/images/reiki.jpg");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 50em;
+}
+#tallers{
+   
+   background-image: url("/images/tallers.jpg");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 50em;
+}
+#aromaterapia{
+   
+   background-image: url("/images/olis.jpg");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 50em;
+}
+#aromaterapia2{
+   background-image: url("/images/olis2.webp");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   min-height: 50em;
+}
+#botiga{
+   background-color: #EFDCCC;
+   height: 10em;
+}
+#sub-botiga{
+   
+   background-image: url("/images/ram.webp");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   height: 50em;
+}
 #footer{
    background-color: #fff;
-   position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
 }
 .contact_wrapper{
-   background-color: #efdccc;
+   background-color: #EFDCCC;
    padding: 2em;
+}
+.requadre-contacte{
+   position: relative;
+   bottom: -32px;
 }
 /*Video*/
 .container-video {
@@ -87,12 +162,159 @@ body {
    left: 0;
    width: 100%;
 }
-@media screen and (max-width: 900px){
+.subseccio-wrapper{
+   width: auto !important;
+   height: auto !important;
+   background-color: rgba(255, 255, 255, 0.7);
+   border-radius: 25px 25px 25px 25px;
+   margin-top: 7em;
+   margin-bottom: 7em;
+   padding: 3em;
+}
+.subseccio-wrapper-reiki{
+   position: relative;
+   top: -7em;
+   width: auto !important;
+   height: auto !important;
+   background-color: rgba(255, 255, 255, 0.7);
+   padding: 3em;
+}
+.subseccio-wrapper-olis{
+   position: relative;
+   width: auto !important;
+   height: auto !important;
+   background-color: rgba(255, 255, 255, 0.7);
+   padding: 3em;
+}
+.reiki{
+   border-radius: 0px 0px 0px 0px;
+   position: relative;
+   top: 4em;
+}
+.subseccio-mitat{
+
+   width: 100% !important;
+   height: auto !important;
+   margin: 2em;
+}
+.imatgeDreta{
+   margin: 2em;
+}
+.imatgeMa{
+   width: 80%;
+   height: 80%;
+   margin: 2em;
+}
+.imatgeMikao{
+
+   width: 10em !important;
+}
+.subseccio-wrapper-botiga{
+   position: relative;
+   top:9em;
+   width: auto !important;
+   height: auto !important;
+   background-color: rgba(255, 255, 255, 0.7);
+   margin-top: 7em;
+   margin-bottom: 7em;
+   padding: 3em;
+}
+.subseccio-wrapper-serveis{
+   opacity: 60%;
+}
+.subseccio-wrapper-serveis:hover{
+   opacity: 100%;
+}
+.subseccio-text{
+   background-color: #FFFBF9;
+   padding: 2em;
+   z-index: 15;
+   position: relative;
+}
+.subseccio-text2{
+   background-color: #EFDCCC;
+   padding: 2em;
+   z-index: 15;
+   position: relative;
+}
+.subseccio-imatge{
+   border: 5px solid #86AFA0;
+   position: relative;
+   top: -5%;
+   z-index: 19;
+}
+.titol-seccio{
+   font-size: 27px;
+}
+.li-seccio{
+   list-style: none;
+}
+.ul-seccio{
+   padding-top: 4em;
+   padding-bottom: 4em;
+}
+.titol-seccio-quisoc{
+   font-size: 37px;
+   font-weight: bold;
+}
+.negreta{
+   font-weight: bold;
+}
+.subtitol-seccio-quisoc{
+   font-size: 20px;
+   font-weight: bold;
+}
+.text-seccio-quisoc{
+   font-size: 20px;
+}
+.ma{
+   position: relative;
+   top: 9em;
+}
+.recuadre-seccio{
+   font-size: 17px;
+}
+.text-seccio{
+   font-size: 17px;
+   padding-left: 1em;
+   padding-right: 1em;
+}
+.responsive {
+   width: 100%;
+   height: auto;
+}
+.responsive-3col{
+   width: 100%;
+   height: 15em;
+}
+.imatge-logoBotiga{
+   position: relative;
+   width: 22em;
+   top: -8em;
+   display:block;
+   margin:auto;
+}
+.imatgeBotiga{
+   position: relative;
+   top: 3em;
+   display:block;
+   margin:auto;
+}
+.menu-seccions{
+   cursor:pointer;
+}
+@media screen and (max-width: 990px){
    .container-video {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       pointer-events: none;
+   }
+   .subseccio-wrapper{
+      top: 0px;
+   }
+   #navbar  {
+      z-index: 17;
    }
 }
 

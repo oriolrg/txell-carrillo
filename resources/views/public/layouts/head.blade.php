@@ -22,7 +22,7 @@
     
 
     <!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -33,5 +33,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 </head>

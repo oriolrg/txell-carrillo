@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+:root {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: Roboto;
+   font-weight: 400;
+   width: 100%;
+   margin: 0;
+   font-size: 17px;
+}
+#navbar  {
+   overflow: hidden;
+   background-color: #fff;
+   position: fixed; /* Set the navbar to fixed position */
+   top: 0; /* Position the navbar at the top of the page */
+   width: 100%; /* Full width */
+   z-index: 20;
+   opacity: 90%;
+}
+.navbar a {
+   float: center;
+   display: block;
+   color: #000;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+ }
+ #nav-title{
+    color: #86AFA0;
+    font-size: 27px;
+ }
+ 
+ .navbar a:hover {
+   background: #FFFBF9;
+   color: black;
+ }
+
+ #header{
+   background-color: rgb(255, 255, 255);
+   position: relative;
+}
+#quisoc{
+   background-image: url("/images/txell.webp");
+   min-height: 200px;
+   position: relative;
+}
+#inici{
+   background-color: #FFFBF9;
+   background-image: url("/public/images/contacte.jpg");
+   min-height: 200px;
+   position: relative;
+}
+#serveis{
+   background-color: #EFDCCC;
+   min-height: 200px;
+   position: relative;
+}
+#contact{
+   background-image: url("/public/images/contacte.jpg");
+   background-color: #86AFA0;
+   min-height: 300px;
+   position: relative;
+}
+#footer{
+   background-color: #fff;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+.contact_wrapper{
+   background-color: #EFDCCC;
+   padding: 2em;
+}
+.requadre-contacte{
+   position: relative;
+   bottom: -32px;
+}
+/*Video*/
+.container-video {
+   position: relative;
+   width: 100%;
+   height: 0;
+   padding-bottom: 26%;
+}
+.video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+.subseccio-wrapper{
+   background-color: #EFDCCC;
+   padding: 2em;
+   top: 70px;
+   position: relative;
+}
+.subseccio-wrapper2{
+   background-color: #FFFBF9;
+   padding: 2em;
+   top: 70px;
+   position: relative;
+}
+.subseccio-text{
+   background-color: #FFFBF9;
+   padding: 2em;
+   z-index: 15;
+   position: relative;
+}
+.subseccio-text2{
+   background-color: #EFDCCC;
+   padding: 2em;
+   z-index: 15;
+   position: relative;
+}
+.subseccio-imatge{
+   border: 5px solid #86AFA0;
+   position: relative;
+   top: -5%;
+   z-index: 19;
+}
+.titol-seccio{
+   font-size: 27px;
+}
+.recuadre-seccio{
+   font-size: 17px;
+}
+.text-seccio{
+   font-size: 17px;
+   padding-left: 1em;
+   padding-right: 1em;
+}
+.responsive {
+   width: 100%;
+   height: auto;
+}
+@media screen and (max-width: 990px){
+   .container-video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      pointer-events: none;
+   }
+   .subseccio-wrapper{
+      top: 0px;
+   }
+   #navbar  {
+      z-index: 17;
+   }
+}
+
+/* Fi video*/

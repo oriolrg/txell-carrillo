@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     
-    @include('layouts.head')
+    @include('public.layouts.head')
     <body>
        
         <div id="app">
-        @include('layouts.preloader')
+            @include('public.layouts.preloader')
+            <header-video-component></header-video-component>
+
+            @include('public.layouts.headernavbar')
+
+            @include('public.layouts.header')
         
-        @include('layouts.headernavbar')
+            @include('public.quisoc')
 
-        @include('layouts.header')
-    
-        @include('public.inici')
+            @include('public.botiga')
 
-        @include('public.serveis')
+            @include('public.serveis')
 
-        @include('public.quisoc')
-    
-        @include('public.contacte')
-    
-        @include('layouts.footer')
-    
-        <!--====== FOOTER PART ENDS ======-->
+            @include('public.reiki')
+
+            @include('public.olis')
+
+            @include('public.tallers')
         
-        <!--====== BACK TOP TOP PART START ======-->
-    
-        <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
-    
-        <!--====== BACK TOP TOP PART ENDS ======-->    
-    
-        <!--====== PART START ======-->
+            @include('public.contacte')
+        
+            @include('public.layouts.footer')
+        
+            <!--====== FOOTER PART ENDS ======-->
+            
+            <!--====== BACK TOP TOP PART START ======-->
+        
+            <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+        
+            <!--====== BACK TOP TOP PART ENDS ======-->    
+        
+            <!--====== PART START ======-->
 
         </div>
-        @include('layouts.llibreries')
+        @include('public.layouts.llibreries')
     
     </body>
     
