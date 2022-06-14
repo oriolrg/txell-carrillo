@@ -6,15 +6,13 @@
        
         <div id="app">
             @include('public.layouts.preloader')
-            <header-video-component></header-video-component>
+            <!--<header-video-component></header-video-component>-->
 
             @include('public.layouts.headernavbar')
 
             @include('public.layouts.header')
         
             @include('public.quisoc')
-
-            @include('public.botiga')
 
             @include('public.serveis')
 

@@ -198,7 +198,6 @@ body {
    margin: 2em;
 }
 .imatgeDreta{
-   margin: 2em;
 }
 .imatgeMa{
    width: 80%;
@@ -266,6 +265,7 @@ body {
 }
 .text-seccio-quisoc{
    font-size: 20px;
+   width: 100%;
 }
 .ma{
    position: relative;
@@ -290,9 +290,10 @@ body {
 .imatge-logoBotiga{
    position: relative;
    width: 22em;
-   top: -8em;
+   top: 0em;
    display:block;
    margin:auto;
+   z-index: 10;
 }
 .imatgeBotiga{
    position: relative;

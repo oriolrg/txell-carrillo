@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+use Illuminate\Routing\Controller as RoutingController;
+
+class HomeController extends RoutingController
 {
     /**
      * Create a new controller instance.

@@ -8,34 +8,34 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul id="nav" class="languages ml-auto  navbar-nav inline  my-2 my-lg-0">
                     <li class="nav-item">
-                        <a class="" href="#quisoc">quien soy</a>
+                        <a class="" href="/#quisoc">quien soy</a>
                     </li>
                     <li class="nav-item">
                         <!--<a class="" href="#serveis">Botiga</a>-->
                     </li>
                     <li class="nav-item">
-                        <a class="" href="#serveis">servicios</a>
+                        <a class="" href="/#serveis">servicios</a>
                     </li>
                 </ul>
                 <ul id="nav" class="languages ml-auto  navbar-nav inline  my-2 my-lg-0">
                     <li class="nav-item">
-                        <a id="nav-title" class="navbar-brand" href="">TxellCarrillo.com</a>
+                        <a id="nav-title" class="navbar-brand" href="/">TxellCarrillo.com</a>
                     </li>
                 </ul>
                 <ul id="nav" class="languages ml-auto  navbar-nav inline  my-2 my-lg-0">     
                     <li class="nav-item">
-                        <a class="" href="#botiga">tienda</a>
+                        <a class="" href="/botiga/#botiga">tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="" href="#contact">contacto</a>
+                        <a class="" href="/#contact">contacto</a>
                     </li>
-                    <li class="nav-item"><a class="" href="{{ asset('idioma/ca') }}">CA</a></li>
+                    <!--<li class="nav-item"><a class="" href="{{ asset('idioma/ca') }}">CA</a></li>-->
                     <li class="nav-item"><a class="" href="{{ asset('idioma/es') }}">ES</a></li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="" href="{{ asset('idioma/es') }}">
                             <i class="bi bi-cart4" alt="Carret" style="font-size: 2rem;"></i>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </nav>
