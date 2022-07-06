@@ -20,6 +20,8 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('header-video-component', require('./components/HeaderVideoComponent.vue').default);
+Vue.component('botiga-component', require('./components/BotigaComponent.vue').default);
+Vue.component('header-cart-component', require('./components/HeaderCartComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

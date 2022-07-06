@@ -4,6 +4,7 @@
       <th scope="col">id</th>
       <th scope="col">Nom</th>
       <th scope="col">Foto</th>
+      <th scope="col">Estoc</th>
       <th scope="col">Accions</th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
         <td>
           <img src="/{{$data->imatge}}" class="card-img-top" style="width: 130px;" alt="..."> 
         </td>
+        <td>{{$data->quantitat}}</td>
         <td>
           <a class="btn btn-small btn-info" href="{{ URL::to('administra/productes/' .$data->id. '/edit') }}">Edita</a>
           <!--<a class="btn btn-small btn-warning" href="{{ URL::to('administra/categories/' .$data->id. '/desactiva') }}">Desactiva</a>-->

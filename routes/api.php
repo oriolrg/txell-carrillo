@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicBotigaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/botiga', [PublicBotigaController::class, 'getProductes']);
+Route::get('/botiga/categoria/{id}', [PublicBotigaController::class, 'getProductesCategoria']);
+Route::get('/cart/items', [CartController::class, 'getItemsCart']);

@@ -304,6 +304,18 @@ body {
 .menu-seccions{
    cursor:pointer;
 }
+#carret{
+   padding-top: 12rem;
+   padding-bottom: 6rem;
+   background-color: #EFDCCC;
+}
+.carretContainer{
+   width: 100% !important;
+}
+.contingutCarret{
+
+   margin: 2rem;
+}
 @media screen and (max-width: 990px){
    .container-video {
       position: relative;

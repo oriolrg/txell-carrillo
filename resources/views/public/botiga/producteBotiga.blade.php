@@ -11,9 +11,13 @@
             @include('public.layouts.headernavbar')
 
             @include('public.layouts.header')
+            
+            @include('public.botiga.header')
 
-            @yield('content')
-
+            @include('public.botiga.contingutProducte')
+        
+            
+        
             @include('public.layouts.footer')
         
             <!--====== FOOTER PART ENDS ======-->
@@ -28,6 +32,7 @@
 
         </div>
         @include('public.layouts.llibreries')
+    
     </body>
-
+    
 </html>

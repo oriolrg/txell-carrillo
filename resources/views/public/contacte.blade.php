@@ -7,24 +7,31 @@
             <div class="requadre-contacte col-lg-6">
                 <div class="contact_wrapper mt-45 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.9s">
                     <div class="section_title pb-15">
-                        <h1 class="sub_title">apúntate a mi newsletter</h1>
+                        <h1 class="sub_title">Contacta con migo</h1>
 
                         <h3 class="sub_title">Ven con nosotras a celebrar una vida llena 
                             de alegrías</h3>
                         <p></p>
                     </div> <!-- section title -->
                     <div class="contact_form">
-                            <form>
+                            <form  method="POST" action="{{ URL::to('/contacta/email') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Nom</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">@lang('contacte.Nom')</label>
                                 <div class="col-sm-10">
                                     <input name="name" class="form-control" type="text" placeholder="@lang('contacte.Nom')" >
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">@lang('contacte.Email')</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="@lang('contacte.Email')">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">@lang('contacte.Missatge')</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="missatge" class="form-control" id="inputEmail3" placeholder="@lang('contacte.Missatge')">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -47,6 +54,7 @@
                                     <button type="submit" class="btn btn-primary">Envia</button>
                                 </div>
                                 <span>TxellCarrillo li informa que les dades de caracter personal que proporcionis omplint el formulari serán tractats per Meritxell Carrillo com a responsable d\'aquesta web. La finalitat de la recollida i tractament de les dades personals que sol·licito són per gestionar la sol·licitut que realizes en aquest formulario de contacte. Legitimació: Consentimient de l\'interessat.</span>
+                                
                             </div>
                         </form>
                     </div> <!-- contact form -->
