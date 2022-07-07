@@ -13,8 +13,8 @@
         <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;"> 
              <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3"> 
                 <div class="col"  v-for="producte in productes" v-bind:key="producte.id"> 
-                    <div class="card">
-                        <div class="card-body py-5 px-4">
+                    <div :class="changeClass(producte.quantitat)" class="card" >
+                        <div :class="changeClassOpacity(producte.quantitat)" class="card-body py-5 px-4">
                             <h6 class="card-title text-muted">{{producte.categoria_nom}}</h6>
                             <h2 class="text">{{producte.nom}}</h2>
                             <img :src="'/'+producte.imatge" class="card-img-top" :alt="producte.nom"> 
@@ -70,6 +70,20 @@
                     this.categories = response.data.categories,
                     this.productes = response.data.productes))
             },
+            changeClass(estoc){
+                if(estoc == 0){
+                    return "no-estoc"
+                }else{
+                    return ""
+                }
+            },
+            changeClassOpacity(estoc){
+                if(estoc == 0){
+                    return "transp"
+                }else{
+                    return ""
+                }
+            }
         }
         
     }
@@ -129,5 +143,18 @@
     }
     a{
         cursor: pointer;
+    }
+    .no-estoc{
+        pointer-events: none;
+        background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0) 80%,
+        #DF6C4F 50%,
+        rgba(0, 0, 0, 0) 100%,
+        #DF6C4F 60px
+        );
+    }
+    .transp{
+        opacity: 0.5;
     }
 </style>

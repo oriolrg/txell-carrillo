@@ -34,7 +34,7 @@
   </div>
   <div class="col-sm-12">
     <label class="hidden" for="specificSizeInputName">Imatge</label>
-    <input type="file" name="imatge" id="uploadImage" class="form-control" value="{{isset($editdata) ? $editdata->imatge : ''}}"  maxlength="60" required  onchange="PreviewImage();">
+    <input type="file" name="imatge" id="uploadImage" class="form-control" value="{{isset($editdata) ? $editdata->imatge : ''}}"  maxlength="60"  onchange="PreviewImage();">
     <img src="/{{isset($editdata) ? $editdata->imatge : ''}}"  id="uploadPreview" style="width: 130px;" class="card-img-top" alt="...">
   </div>
   <div class="col-sm-12">

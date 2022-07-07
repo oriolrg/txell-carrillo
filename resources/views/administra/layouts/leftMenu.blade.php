@@ -16,8 +16,12 @@
             </ul>
             <ul class="list-unstyled components">
                 <li>
-                    <a class="alertlink" href="{{url('/administra/comandes/pendents/')}}">Tens X comandes pendents</a>
-                    <a class="alertlink" href="{{url('/administra/productes/X')}}">Producte X no te estoc</a>
+                    <a class="alertlink" href="{{url('/administra/comandes/pendents/')}}">Tens {{count($comandes_pendents)}} comandes pendents</a>
+                    @foreach($productes as $producte)
+                        @if($producte->quantitat == 0)
+                            <a class="alertlink" href="{{url('/administra/productes/X')}}">Producte {{$producte->nom}} no te estoc</a>
+                        @endif
+                    @endforeach
                 </li>
             </ul>
         </nav>

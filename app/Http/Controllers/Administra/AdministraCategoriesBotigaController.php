@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Categories;
+use App\Models\Comandes;
+use App\Models\Productes;
 use Illuminate\Routing\Controller as RoutingController;
 
 class AdministraCategoriesBotigaController extends RoutingController
@@ -13,6 +15,10 @@ class AdministraCategoriesBotigaController extends RoutingController
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->comandes_pendents = Comandes::where('estat', 0)->get();
+        $this->productes = Productes::get();
+        $this->categories = Categories::get();
     }
     /**
      * Mostra index inicial.
@@ -21,8 +27,11 @@ class AdministraCategoriesBotigaController extends RoutingController
     public function index()
     {
         $categories = Categories::get();
+        $comandes_pendents = Comandes::where('estat', 0)->get();
         return view('administra.categories.index')
-        ->with('categories', $categories);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
     /**
      * Store a newly created resource in storage.
@@ -40,7 +49,9 @@ class AdministraCategoriesBotigaController extends RoutingController
         $categories->save();
         $categories = Categories::get();
         return view('administra.categories.index')
-        ->with('categories', $categories);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
     /**
      * Edita la categoria
@@ -58,7 +69,9 @@ class AdministraCategoriesBotigaController extends RoutingController
         $categoria->save();
         $categories = Categories::get();
         return view('administra.categories.index')
-        ->with('categories', $categories);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
     /**
      * Actualitza la categoria
@@ -71,8 +84,9 @@ class AdministraCategoriesBotigaController extends RoutingController
         $categoria = Categories::where('id', $id)->first();
         $categories = Categories::get();
         return view('administra.categories.edita')
-        ->with('editdata', $categoria)
-        ->with('categories', $categories);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('productes', $this->productes)
+        ->with('categories', $this->categories);
     }
     /**
      * Borra la categoria
@@ -83,9 +97,9 @@ class AdministraCategoriesBotigaController extends RoutingController
     public function delete($id)
     {
         //TODO borrar tambe les translations
-        $categoria = Categories::where('id', $id)->delete();
-        $categories = Categories::get();
         return view('administra.categories.index')
-        ->with('categories', $categories);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
 }

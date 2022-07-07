@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comandes;
+use App\Models\ComandesProducte;
+use App\Models\ComandesProductes;
 use Illuminate\Http\Request;
 use App\Models\Productes;
 use Darryldecode\Cart\Facades\CartFacade;
@@ -14,9 +17,20 @@ class PagamentController extends RoutingController
     {
         $totalPagar = 0;
         $cartItems = CartFacade::getContent();
+        $comanda = new Comandes();
+        $comanda->email = 'oriolrg@gmail.com';
+        $comanda->direccio = 'oriolrg@gmail.com';
+        $comanda->estat = 0;
+        $comanda->save();
         foreach ($cartItems as $key => $value) {
             $producte = Productes::where('id', $value->id)->first();
             if($value->quantity <= $producte->quantitat){
+                
+                $comanda_producte = new ComandesProducte();
+                $comanda_producte->comanda_id = $comanda->id;
+                $comanda_producte->producte_id = $producte->id;
+                $comanda_producte->quantitat = $value->quantity;
+                $comanda_producte->save();
                 $producte->quantitat = $producte->quantitat - $value->quantity;
                 $producte->save();
                 $totalPagar += $value->price * $value->quantity;
@@ -28,6 +42,8 @@ class PagamentController extends RoutingController
             
         }
         CartFacade::clear();
+        $comanda->pagat =  $totalPagar;
+        $comanda->save();
         $cartItems = CartFacade::getContent();
         session()->flash('success', 'Pagament realitzat Satisfactoriament !');
         return view('public.botiga.cart', compact('cartItems'));

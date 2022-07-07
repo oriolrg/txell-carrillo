@@ -28,7 +28,8 @@ class PublicBotigaController extends RoutingController
     {
         $productes = new Collection();
         $productes['categories'] = Categories::get();
-        $productes['productes'] = Productes::where('quantitat', '>',0)->get();
+        //$productes['productes'] = Productes::where('quantitat', '>',0)->get();
+        $productes['productes'] = Productes::get();
         foreach ($productes['productes'] as $key => $value) {
             $value->categoria_nom = Categories::where('id',$value->categoria_id)->first()->nom;
         }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administra;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categories;
+use App\Models\Comandes;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Productes;
@@ -14,6 +15,10 @@ class AdministraProductesBotigaController extends RoutingController
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->productes = Productes::get();
+        $this->categories = Categories::get();
+        $this->comandes_pendents = Comandes::where('estat', 0)->get();
     }
     /**
      * Mostra index inicial.
@@ -21,11 +26,10 @@ class AdministraProductesBotigaController extends RoutingController
      */
     public function index()
     {
-        $productes = Productes::get();
-        $categories = Categories::get();
         return view('administra.productes.index')
-        ->with('categories', $categories)
-        ->with('productes', $productes);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
     /**
      * Store a newly created resource in storage.
@@ -61,11 +65,10 @@ class AdministraProductesBotigaController extends RoutingController
 
         }
         $productes->save();
-        $productes = Productes::get();
-        $categories = Categories::get();
         return view('administra.productes.index')
-        ->with('categories', $categories)
-        ->with('productes', $productes);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
     /**
      * Edita el producte
@@ -100,11 +103,10 @@ class AdministraProductesBotigaController extends RoutingController
 
         }
         $producte->save();
-        $productes = Productes::get();
-        $categories = Categories::get();
         return view('administra.productes.index')
-        ->with('categories', $categories)
-        ->with('productes', $productes);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
     /**
      * Actualitza el producte
@@ -115,12 +117,11 @@ class AdministraProductesBotigaController extends RoutingController
     public function edit($id)
     {
         $producte = Productes::where('id', $id)->first();
-        $productes = Productes::get();
-        $categories = Categories::get();
         return view('administra.productes.edita')
-        ->with('categories', $categories)
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
         ->with('editdata', $producte)
-        ->with('productes', $productes);
+        ->with('productes', $this->productes);
     }
     /**
      * Borra el producte
@@ -132,10 +133,9 @@ class AdministraProductesBotigaController extends RoutingController
     {
         //TODO borrar tambe les translations
         $producte = Productes::where('id', $id)->delete();
-        $productes = Productes::get();
-        $categories = Categories::get();
         return view('administra.productes.index')
-        ->with('categories', $categories)
-        ->with('productes', $productes);
+        ->with('comandes_pendents', $this->comandes_pendents)
+        ->with('categories', $this->categories)
+        ->with('productes', $this->productes);
     }
 }
