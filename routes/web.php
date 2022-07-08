@@ -58,7 +58,13 @@ Route::group(['prefix'=>'botiga','as'=>'botiga.'], function(){
  */
 Route::group(['prefix'=>'administra','as'=>'administra.'], function(){
     Route::resource('/', AdministraProductesBotigaController::class);
-    Route::resource('/comandes', AdministraComandesBotigaController::class);
+    Route::group(['prefix'=>'comandes','as'=>'comandes.'], function(){
+        Route::get('/', [AdministraComandesBotigaController::class,'getComandes']);
+        Route::get('/pendents', [AdministraComandesBotigaController::class,'getComandesPendents'])->name('pendents');
+        Route::get('/{id}/tramitat', [AdministraComandesBotigaController::class,'setComandaTramitada']);
+        Route::get('/tramitades', [AdministraComandesBotigaController::class,'getComandesTramitades'])->name('tramitades');
+        Route::delete('/{id}/delete', [AdministraComandesBotigaController::class,'delete']);
+    });
     Route::group(['prefix'=>'categories','as'=>'categories.'], function(){
         Route::resource('/', AdministraCategoriesBotigaController::class);
         Route::get('/{id}/edit', [AdministraCategoriesBotigaController::class,'edit']);

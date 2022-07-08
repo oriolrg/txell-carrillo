@@ -12,6 +12,10 @@ class ComandesProducte extends Model
     use HasFactory;
     protected $table = 'comandes_producte';
     protected $fillable = ['comanda_id', 'producte_id', 'quantitat'];
+    public function producte()
+    {
+        return $this->hasOne(Productes::class, 'id', 'producte_id');
+    }
 }
 
 

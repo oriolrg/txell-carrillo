@@ -3,7 +3,7 @@
 @if(Auth::user()->isAdmin == 0 || Auth::user()->isAdmin == 1 ) 
         
 @endif
-Comandes Pendents
+Comandes Tramitades
 @include('administra.comandes.nav')
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="llista" role="tabpanel" aria-labelledby="home-tab">
