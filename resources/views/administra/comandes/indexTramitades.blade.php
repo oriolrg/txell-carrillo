@@ -9,9 +9,6 @@ Comandes Tramitades
   <div class="tab-pane fade show active" id="llista" role="tabpanel" aria-labelledby="home-tab">
     @include('administra.comandes.llista')
   </div>
-  <div class="tab-pane fade" id="afegeix" role="tabpanel" aria-labelledby="profile-tab">
-    @include('administra.comandes.formulari')
-  </div>
 </div>
 @endsection
 
